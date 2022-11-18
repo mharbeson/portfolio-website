@@ -2,6 +2,8 @@
 
 This is my portfolio website made using HTML/CSS and JavaScript. I plan to continue building out the site in the future and expanding upon the foundation built here. 
 
+-View the site [Here](https://mharbeson.github.io/portfolio-website/)
+
 ## Objectives Completed:
 
 - Create a responsive menu with JavaScript
