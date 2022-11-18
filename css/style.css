@@ -13,6 +13,11 @@ body {
     overflow-x: hidden;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 img,
 picutre {
     max-width: 100%;
@@ -206,7 +211,8 @@ picutre {
 
 @media (min-width: 45em) {
     .home {
-        background-position: bottom center;
+        background-position: center center;
+        background-size: cover;
     }
 
     .grid-container {
