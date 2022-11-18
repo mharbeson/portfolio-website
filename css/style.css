@@ -13,20 +13,24 @@ body {
     overflow-x: hidden;
 }
 
-/* ------------------- */
-/* Utility classes     */
-/* ------------------- */
+img,
+picutre {
+    max-width: 100%;
+    display: block;
+}
+
+/* Utility classes */
 
 /* general */
 .flex {
     display: flex;
-    gap: var(--gap, 1rem);
+    gap: 1rem;
 }
 
 
 .grid {
     display: grid;
-    gap: var(--gap, 1rem);
+    gap: 1rem;
 }
 
 .container {
@@ -50,6 +54,11 @@ body {
 
 .uppercase {
     text-transform: uppercase;
+}
+
+.resize-animation-stopper * {
+    animation: none !important;
+    transition: none !important;
 }
 
 /* primary-header */
@@ -85,7 +94,7 @@ body {
 
 .primary-navigation a {
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 1.5rem;
     font-weight: 600;
     padding: 1rem;
@@ -129,8 +138,44 @@ body {
         right: 2rem;
     }
 
-    .menu-togle[aria-expanded="true"] {
+    .menu-toggle[aria-expanded="true"] {
         background-image: url("../assets/xmark-solid.svg");
+    }
+}
+
+@media (min-width: 35em) and (max-width: 55em) {
+    .primary-navigation a>i {
+        display: none;
+    }
+}
+
+@media (min-width: 35em) {
+    .primary-navigation {
+        gap: 3rem;
+        padding-block: 2rem;
+        padding-inline: 3rem;
+    }
+
+    .home {
+        background-position: center center;
+    }
+
+    .grid-container {
+        text-align: left;
+        column-gap: 2rem;
+        display: grid;
+        grid-auto-flow: row;
+        padding-bottom: max(6rem, 20vh);
+        align-items: end;
+    }
+
+    .grid-container img {
+        /* grid-column: 2 / 3;
+        grid-row: 1 / 3; */
+        max-width: auto;
+        max-height: auto;
+        margin: 2rem;
+        padding: 1rem;
     }
 }
 
@@ -138,18 +183,60 @@ body {
 /* home */
 .home {
     background-image: url(../assets/mtn.jpg);
+    background-size: cover;
 }
 
-/* 
-@media (min-width: 35rem) {
-    .home {
-        background-position: center center;
-        background-image: url(./assets/home/background-home-tablet.jpg);
-    }
+.grid-container {
+    text-align: center;
+    display: grid;
+    place-items: center;
+    padding-inline: 2rem;
+    padding-bottom: 4rem;
 }
 
-@media (min-width: 45rem) {
+.grid-background {
+    background: hsl(0, 0%, 100%, 0.5);
+    backdrop-filter: blur(2rem);
+}
+
+.grid-container p {
+    max-width: 60ch;
+}
+
+
+@media (min-width: 45em) {
     .home {
-        background-image: url(./assets/home/background-home-desktop.jpg);
+        background-position: bottom center;
     }
-}  */
+
+    .grid-container {
+        text-align: left;
+        column-gap: 2rem;
+        grid-template-columns: 2fr 1fr;
+        padding-bottom: max(6rem, 20vh);
+        align-items: end;
+    }
+
+    .grid-background {
+        margin: 2rem;
+        padding: 2rem;
+    }
+
+    .grid-container img {
+        /* grid-column: 2 / 3;
+        grid-row: 1 / 3; */
+        max-width: auto;
+        max-height: auto;
+        margin: 2rem;
+        padding: 1rem;
+    }
+
+    /* 
+    .grid-container>*:first-child {
+        grid-column: 2;
+    }
+
+    .grid-container>*:last-child {
+        grid-column: 3;
+    } */
+}
